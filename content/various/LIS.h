@@ -24,3 +24,11 @@ template<class I> vi lis(const vector<I>& S) {
 	while (L--) ans[L] = cur, cur = prev[cur];
 	return ans;
 }
+
+
+
+
+
+
+
+

@@ -36,10 +36,3 @@ int fib(long long n, int mod)
     }
     return b;
 }
-int32_t main()
-{
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout << fib(10, 100) << '\n';
-    return 0;
-}
