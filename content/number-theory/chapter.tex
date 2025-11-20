@@ -1,53 +1,145 @@
-\chapter{Number theory}
+\chapter{Number Theory}
 
-\section{Modular arithmetic}
-	%\kactlimport{ModularArithmetic.h}
-	\kactlimport{ModInverse.h}
-	\kactlimport{ModPow.h}
-	\kactlimport{ModLog.h}
-	\kactlimport{ModSum.h}
-	\kactlimport{ModMulLL.h}
-	\kactlimport{ModSqrt.h}
+%====================== Sieve and Prime Related ======================
+\section{Sieve and Prime Utilities}
+\kactlimport{ETFsieve.cpp}        % new added, last month
+\kactlimport{ETFsqrt.cpp}         % new added, last month
+\kactlimport{FactoriseSieve.cpp}  % new added, last month
+\kactlimport{FactoriseSqrt.cpp}   % added mod, last week
+\kactlimport{NODandSODsieve.cpp}  % added math pdf from kactl, last week
+\kactlimport{NodSqrt.cpp}         % new added, last month
+\kactlimport{PrimeSieve.cpp}      % new added, last month
+% \kactlimport{PrimeSqrt.cpp}       % new added, last month
+\kactlimport{SPFandHPF.cpp}       % spf add korlam, last week
+\kactlimport{SegmentedSieve.cpp}  % new added, last month
+\kactlimport{SodSqrt.cpp}         % new added, last month
+\kactlimport{bitsetSieve.cpp}     % memory efficient Sieve, last week
+\kactlimport{progkriyaSieve.cpp}  % eta boi er sieve ta, last week
+\kactlimport{sieve upto 1e9.cpp}  % source added, last week
 
-\section{Primality}
-  \kactlimport{LinearSieve.h}
-	\kactlimport{phiFunction.h}
-	\kactlimport{FastEratosthenes.h}
-	\kactlimport{MillerRabin.h}
-	\kactlimport{Factor.h}
+%====================== Modular Arithmetic ===========================
+\section{Modular Arithmetic}
+\kactlimport{mod bin exp.cpp} 
+\kactlimport{modLog.cpp}
+\kactlimport{Mint.cpp}
 
-\section{Divisibility}
-	\kactlimport{euclid.h}
-	% \kactlimport{Euclid.java}
-	\kactlimport{CRT.h}
+%====================== Combinatorics ================================
+\section{Combinatorics}
+\kactlimport{nCr nPr.cpp}
 
+
+%====================== Big Integer Utilities ========================
+\section{Big Integer Utilities}
+\kactlimport{stringAdd.cpp}
+\kactlimport{stringDivisible.cpp}
+\kactlimport{stringMul.cpp}
+
+%====================== Others ====================================
+\section{Others}
+\kactlimport{CRT.cpp}
+\kactlimport{fibonacci number faster.cpp}
+\kactlimport{EGCD.cpp}
+\kactlimport{EGCD LDE.cpp}
 	\subsection{Bézout's identity}
 	For $a \neq $, $b \neq 0$, then $d=gcd(a,b)$ is the smallest positive integer for which there are integer solutions to $ax+by=d$. If $(x,y)$ is one solution, then all solutions are given by $\left(x+kb/d, y-ka/d\right)$, $k\in\mathbb{Z}$. Find one solution using egcd.
 
+\section{More Number Theory}
 
-\section{Fractions}
-	%\kactlimport{ContinuedFractions.h}
-	\kactlimport{FracBinarySearch.h}
-
-\section{Mobius Function}
 \[
-	\mu(n) = \begin{cases} 0 & n \textrm{ is not square free}\\ 1 & n \textrm{ has even number of prime factors}\\ -1 & n \textrm{ has odd number of prime factors}\\\end{cases}
+\sum_{k=1}^n \frac{1}{\gcd(k,n)}
+= \sum_{d\mid n} \frac{1}{d}\,\phi\!\left(\frac{n}{d}\right)
+= \frac{1}{n} \sum_{d\mid n} d\,\phi(d)
 \]
-  Mobius Inversion:
-  \[ g(n) = \sum_{d|n} f(d) \Leftrightarrow f(n) = \sum_{d|n} \mu(d)g(n/d) \]
-  Other useful formulas/forms:
 
-  $ \sum_{d | n} \mu(d) = [ n = 1] $,
-  $ \phi(n) = \sum_{d | n} \mu(d)\frac{n}{d}$
+\[
+\sum_{k=1}^n \frac{k}{\gcd(k,n)}
+= \frac{n}{2} \cdot \frac{1}{n}
+  \sum_{d\mid n} d\,\phi(d)
+\]
 
-  $ g(n) = \sum_{n|d} f(d) \Leftrightarrow f(n) = \sum_{n|d} \mu(\frac{d}{n})g(d)$
+\[
+\sum_{k=1}^{n} \frac{n}{\gcd(k,n)}
+= 2 \sum_{k=1}^{n} \frac{k}{\gcd(k,n)} - 1,
+\quad n > 1
+\]
 
-  $ g(n) = \sum_{1 \leq m \leq n} f(\left\lfloor\frac{n}{m}\right \rfloor ) \Leftrightarrow f(n) = \sum_{1\leq m\leq n} \mu(m)g(\left\lfloor\frac{n}{m}\right\rfloor)$
+\[
+\sum_{i=1}^n \sum_{j=1}^n [\gcd(i,j)=1]
+= \sum_{d=1}^n \mu(d)\left\lfloor \frac{n}{d} \right\rfloor^2
+\]
 
-  If $f$ multiplicative, $\sum_{d | n} \mu(d)f(d) = \prod_{\textnormal{prime } p | n}(1 - f(p))$ and $\sum_{d | n}\mu^2(d)f(d) = \prod_{\textnormal{prime } p | n} (1 + f(p))$. 
+\[
+\sum_{i=1}^n \sum_{j=1}^n \gcd(i,j)
+= \sum_{d=1}^n \phi(d)\left\lfloor \frac{n}{d} \right\rfloor^2
+\]
 
-  If $s_f(n) = \sum_{i = 1}^{n} f(i)$ is a prefix sum of mulitplicative $f$ then $s_{f * g}(n) = \sum_{1 \leq xy \leq n}f(x)g(y)$. Then $s_f(n) = \{s_{f * g}(n) - \sum_{d = 2}^{n} s_f(\lfloor n / d \rfloor) g(d)\} / g(1)$ where $f * g(n) = \sum_{d | n} f(d)g(n / d)$ (Dirichlet). Precompute (linear sieve) $O(n^{2/3})$ first values of $s_f$ for complexity $O(n^{2/3})$.
+\[
+\sum_{i=1}^n \sum_{j=1}^n i\cdot j\,[\gcd(i,j)=1]
+= \sum_{i=1}^n \phi(i)\,i^2
+\]
 
-  Useful sums and convolutions: $\epsilon = \mu * \textnormal{\textbf{1}}$, id = $\phi * \textnormal{\textbf{1}}$, id = $g * \textnormal{id}_2$, where $\epsilon(n) = [n = 1]$, $\textnormal{\textbf{1}}(n) = 1$, id$(n) = n$, id$_k(n) = n^k$, $g(n) = \sum_{d | n}\mu(d)nd$.\\
-  coprime pairs in $[1,n]$ is $\sum_{d = 1}^{n}\mu(d)\lfloor n / d \rfloor ^2$. Sum of GCD pairs in $[1, n]$ is $\sum_{d = 1}^{n}\phi(d)\lfloor n / d \rfloor ^2$. Sum of LCM pairs in $[1, n]$ is $\sum_{d = 1}^{n}(\frac{\lfloor n / d \rfloor (1 + \lfloor n / d \rfloor)}{2})^2 g(d)$, where $g$ is defined above with $g(p^k) = p^k - p^{k+1}$.
+\[
+\sum_{i=1}^{n}\sum_{j=1}^{n}\mathrm{lcm}(i,j)
+= \sum_{l=1}^n
+\left(
+\frac{(1+\lfloor n/l\rfloor)\lfloor n/l\rfloor}{2}
+\right)^2
+\]
+
+\subsection{Permutations}
+\subsubsection{Factorial Values}
+
+\begin{center}
+\begin{tabular}{c|cccccccc}
+$n$  & 1 & 2 & 3 & 4 & 5 & 6 & 7 &8\\
+\hline
+$n!$ & 1 & 2 & 6 & 24 & 120 & 720 & 5040 &40320\\
+\end{tabular}
+
+\vspace{3mm}
+
+\begin{tabular}{c|ccccc}
+$n$  & 9 & 10 & 11 & 12 & 13\\
+\hline
+$n!$ & 362880 & 3628800 & 4.0e7 & 4.8e8 & 6.2e9\\
+\end{tabular}
+
+\vspace{3mm}
+
+\begin{tabular}{c|ccccccc}
+$n$  & 14 & 15 & 16 & 17 & 20 &25\\
+\hline
+$n!$ & 8.7e10 & 1.3e12 & 2.1e13 & 3.6e14 & 2e18 &2e25\\
+\end{tabular}
+
+\end{center}
+
+
+
+
+% \section{Fractions}
+% 	%\kactlimport{ContinuedFractions.h}
+% 	\kactlimport{FracBinarySearch.h}
+
+% \section{Mobius Function}
+% \[
+% 	\mu(n) = \begin{cases} 0 & n \textrm{ is not square free}\\ 1 & n \textrm{ has even number of prime factors}\\ -1 & n \textrm{ has odd number of prime factors}\\\end{cases}
+% \]
+%   Mobius Inversion:
+%   \[ g(n) = \sum_{d|n} f(d) \Leftrightarrow f(n) = \sum_{d|n} \mu(d)g(n/d) \]
+%   Other useful formulas/forms:
+
+%   $ \sum_{d | n} \mu(d) = [ n = 1] $,
+%   $ \phi(n) = \sum_{d | n} \mu(d)\frac{n}{d}$
+
+%   $ g(n) = \sum_{n|d} f(d) \Leftrightarrow f(n) = \sum_{n|d} \mu(\frac{d}{n})g(d)$
+
+%   $ g(n) = \sum_{1 \leq m \leq n} f(\left\lfloor\frac{n}{m}\right \rfloor ) \Leftrightarrow f(n) = \sum_{1\leq m\leq n} \mu(m)g(\left\lfloor\frac{n}{m}\right\rfloor)$
+
+%   If $f$ multiplicative, $\sum_{d | n} \mu(d)f(d) = \prod_{\textnormal{prime } p | n}(1 - f(p))$ and $\sum_{d | n}\mu^2(d)f(d) = \prod_{\textnormal{prime } p | n} (1 + f(p))$. 
+
+%   If $s_f(n) = \sum_{i = 1}^{n} f(i)$ is a prefix sum of mulitplicative $f$ then $s_{f * g}(n) = \sum_{1 \leq xy \leq n}f(x)g(y)$. Then $s_f(n) = \{s_{f * g}(n) - \sum_{d = 2}^{n} s_f(\lfloor n / d \rfloor) g(d)\} / g(1)$ where $f * g(n) = \sum_{d | n} f(d)g(n / d)$ (Dirichlet). Precompute (linear sieve) $O(n^{2/3})$ first values of $s_f$ for complexity $O(n^{2/3})$.
+
+%   Useful sums and convolutions: $\epsilon = \mu * \textnormal{\textbf{1}}$, id = $\phi * \textnormal{\textbf{1}}$, id = $g * \textnormal{id}_2$, where $\epsilon(n) = [n = 1]$, $\textnormal{\textbf{1}}(n) = 1$, id$(n) = n$, id$_k(n) = n^k$, $g(n) = \sum_{d | n}\mu(d)nd$.\\
+%   coprime pairs in $[1,n]$ is $\sum_{d = 1}^{n}\mu(d)\lfloor n / d \rfloor ^2$. Sum of GCD pairs in $[1, n]$ is $\sum_{d = 1}^{n}\phi(d)\lfloor n / d \rfloor ^2$. Sum of LCM pairs in $[1, n]$ is $\sum_{d = 1}^{n}(\frac{\lfloor n / d \rfloor (1 + \lfloor n / d \rfloor)}{2})^2 g(d)$, where $g$ is defined above with $g(p^k) = p^k - p^{k+1}$.
 

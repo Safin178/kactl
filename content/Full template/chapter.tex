@@ -1,0 +1,114 @@
+\chapter{Full template}
+
+\section{Arif's template}
+\kactlimport{Arif template.cpp}
+
+
+% \section{Fibonacci}
+% Let $A, B$, and $n$ be integers. Define $k = A - B$.
+
+% \[
+% F_A F_B = F_{k+1}F_A F_A + F_k F_A F_{A-1}
+% \]
+
+% \[
+% \sum_{i=0}^{n} F_i^2 = F_{n+1}F_n
+% \]
+
+% \[
+% \sum_{i=0}^{n} F_i F_{i+1} = F_{n+1}^2 - (-1)^n
+% \]
+
+% \[
+% \sum_{i=0}^{n} F_i F_{i-1}
+% = \sum_{i=0}^{n-1} F_i F_{i+1}
+% \]
+
+% \[
+% \gcd(F_m, F_n) = F_{\gcd(m,n)}
+% \]
+
+% \[
+% \sum_{0 \le k \le n}
+% \binom{n-k}{k}
+% = Fib_{n+1}
+% \]
+
+% \[
+% \gcd(F_n, F_{n+1})
+% = \gcd(F_n, F_{n+2})
+% = \gcd(F_{n+1}, F_{n+2})
+% = 1
+% \]
+
+% \section{More Number Theory}
+
+% \[
+% \sum_{k=1}^n \frac{1}{\gcd(k,n)}
+% = \sum_{d\mid n} \frac{1}{d}\,\phi\!\left(\frac{n}{d}\right)
+% = \frac{1}{n} \sum_{d\mid n} d\,\phi(d)
+% \]
+
+% \[
+% \sum_{k=1}^n \frac{k}{\gcd(k,n)}
+% = \frac{n}{2} \cdot \frac{1}{n}
+%   \sum_{d\mid n} d\,\phi(d)
+% \]
+
+% \[
+% \sum_{k=1}^{n} \frac{n}{\gcd(k,n)}
+% = 2 \sum_{k=1}^{n} \frac{k}{\gcd(k,n)} - 1,
+% \quad n > 1
+% \]
+
+% \[
+% \sum_{i=1}^n \sum_{j=1}^n [\gcd(i,j)=1]
+% = \sum_{d=1}^n \mu(d)\left\lfloor \frac{n}{d} \right\rfloor^2
+% \]
+
+% \[
+% \sum_{i=1}^n \sum_{j=1}^n \gcd(i,j)
+% = \sum_{d=1}^n \phi(d)\left\lfloor \frac{n}{d} \right\rfloor^2
+% \]
+
+% \[
+% \sum_{i=1}^n \sum_{j=1}^n i\cdot j\,[\gcd(i,j)=1]
+% = \sum_{i=1}^n \phi(i)\,i^2
+% \]
+
+% \[
+% \sum_{i=1}^{n}\sum_{j=1}^{n}\mathrm{lcm}(i,j)
+% = \sum_{l=1}^n
+% \left(
+% \frac{(1+\lfloor n/l\rfloor)\lfloor n/l\rfloor}{2}
+% \right)^2
+% \]
+
+% \subsection{Permutations}
+% \subsubsection{Factorial Values}
+
+% \begin{center}
+% \begin{tabular}{c|cccccccccc}
+% $n$  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+% \hline
+% $n!$ & 1 & 2 & 6 & 24 & 120 & 720 & 5040 & 40320 & 362880 & 3628800\\
+% \end{tabular}
+
+% \vspace{3mm}
+
+% \begin{tabular}{c|ccccccc}
+% $n$  & 11 & 12 & 13 & 14 & 15 & 16 & 17\\
+% \hline
+% $n!$ & 4.0e7 & 4.8e8 & 6.2e9 & 8.7e10 & 1.3e12 & 2.1e13 & 3.6e14\\
+% \end{tabular}
+
+% \vspace{3mm}
+
+% \begin{tabular}{c|cccccccc}
+% $n$  & 20 & 25 & 30 & 40 & 50 & 100 & 150 & 171\\
+% \hline
+% $n!$ & 2e18 & 2e25 & 3e32 & 8e47 & 3e64 & 9e157 & 6e262 & \scriptsize{$>$DBL\_MAX}\\
+% \end{tabular}
+% \end{center}
+
+

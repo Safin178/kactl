@@ -1,39 +1,6 @@
 % Written by Anders Sjoqvist and Ulf Lundstrom, 2009
 % The main sources are: tinyKACTL, Beta and Wikipedia
 \chapter{Mathematics}
-\section{Equations}
-The extremum of a quadtratic is given by $x = -b/2a$.\\
-\textbf{Cramer}: Given an equation $Ax = b$, the solution to a variable $x_i$ is given by
-\begin{flalign*}
-x_i &= \frac{\det A_i'}{\det A} && 
-  \text{\parbox{5cm}{[where $A_i'$ is $A$ with the $i$'th column\\ replaced by $b$.]}}
-\end{flalign*}
-\textbf{Vieta}: Let $P(x) = a_nx^n +...+a_0$, be a polynomial with complex coefficients and degree $n$, having complex roots $r_n,...,r_1$. Then for any integer $0 \leq k \leq n$,
-\[
-  \sum_{1 \leq i_1 < i_2 < ... < i_k \leq n} r_{i_1}r_{i_2}...r_{i_k} = (-1)^k\frac{a_{n-k}}{a_n}
-\]
-\textbf{Rational Root Theorem}: If $\frac{p}{q}$ is a reduced rational root of a polynomial with \textbf{integer coeffs}, then $p \mid a_0$ and $q \mid a_n$
-\section{Ceils and Floors}
-For $x, y \in \mathbb{R}$, $m, n \in \mathbb{Z}$:
-{\small
-\begin{itemize}
-  \item $\lfloor x \rfloor \leq x < \lfloor x \rfloor + 1\text{;   }\lceil x \rceil - 1 < x \leq \lceil x \rceil$
-  \item $- \lfloor x \rfloor = \lceil -x \rceil \text{;   } - \lceil x \rceil = \lfloor -x \rfloor$
-  \item $\lfloor x + n \rfloor = \lfloor x \rfloor + n \text{, } \lceil x + n \rceil = \lceil x \rceil + n$
-  \item $\lfloor x \rfloor = m \Leftrightarrow x - 1 < m \leq x < m + 1$
-  \item $\lceil x \rceil = n \Leftrightarrow n - 1 < x \leq n < x + 1$
-  \item If $n > 0$, $\lfloor \frac{\lfloor x \rfloor + m}{n} \rfloor = \lfloor \frac{x + m}{n} \rfloor$
-  \item If $n > 0$, $\lceil \frac{\lceil x \rceil + m}{n} \rceil = \lceil \frac{x + m}{n} \rceil$
-  \item If $n > 0$, $\lfloor \frac{\lfloor \frac{x}{m} \rfloor }{n} \rfloor = \lfloor \frac{x}{mn} \rfloor$
-  \item If $n > 0$, $\lceil \frac{\lceil \frac{x}{m} \rceil }{n} \rceil = \lceil \frac{x}{mn} \rceil$
-  \item For $m, n > 0$, $\sum_{k = 1}^{n - 1} \lfloor \frac{km}{n} \rfloor = \frac{(m - 1)(n - 1) + \gcd(m, n) - 1}{2}$
-\end{itemize}
-}
-
-\section{Recurrences}
-If $a_n = c_1 a_{n-1} + \dots + c_k a_{n-k}$, and $r_1, \dots, r_k$ are distinct roots of $x^k - c_1 x^{k-1} - \dots - c_k$, there are $d_1, \dots, d_k$ s.t.
-\[a_n = d_1r_1^n + \dots + d_kr_k^n. \]
-Non-distinct roots $r$ become polynomial factors, e.g. $a_n = (d_1n + d_2)r^n$.
 
 \section{Trigonometry}
 \vspace{-3mm}
@@ -81,22 +48,17 @@ y = r\sin\theta\sin\phi & \theta = \textrm{acos}(z/\sqrt{x^2+y^2+z^2})\\
 z = r\cos\theta & \phi = \textrm{atan2}(y,x)
 \end{array}\]
 
-\section{Derivatives/Integrals}
-{\footnotesize
-\begin{align*}
-	\dfrac{d}{dx}\arcsin x = \dfrac{1}{\sqrt{1-x^2}} &&& \dfrac{d}{dx}\arccos x = -\dfrac{1}{\sqrt{1-x^2}} \\
-	\dfrac{d}{dx}\tan x = 1+\tan^2 x &&& \dfrac{d}{dx}\arctan x = \dfrac{1}{1+x^2} \\
-	\int\tan ax = -\dfrac{\ln|\cos ax|}{a} &&& \int xe^{ax}dx = \frac{e^{ax}}{a^2}(ax-1) \\
-	\int e^{-x^2} = \frac{\sqrt \pi}{2} \text{erf}(x) &&& \int x\sin ax = \frac{\sin ax-ax \cos ax}{a^2}
-\end{align*}}
-\[\int_a^bf(x)g(x)dx = [F(x)g(x)]_a^b-\int_a^bF(x)g'(x)dx\]
 
 \section{Sums}
 \vspace{-3mm}
 \begin{align*}
-  c^a + c^{a+1} + \dots + c^{b} &= \frac{c^{b+1} - c^a}{c-1}, c \neq 1\\
-	1^4 + 2^4 + 3^4 + \dots + n^4 &= S_2 \times \frac{3n^2 + 3n - 1}{5} = S_4
+  c^a + c^{a+1} + \dots + c^{b} &= \frac{c^{b+1} - c^a}{c-1}, \quad c \neq 1\\[1em]
+  1^2 + 2^2 + 3^2 + \dots + n^2 &= \frac{n(2n+1)(n+1)}{6}\\
+  1^3 + 2^3 + 3^3 + \dots + n^3 &= \frac{n^2(n+1)^2}{4}\\
+  1^4 + 2^4 + 3^4 + \dots + n^4 &= \frac{n(n+1)(2n+1)(3n^2+3n-1)}{30}\\[1em]
+  1^4 + 2^4 + 3^4 + \dots + n^4 &= S_2 \times \frac{3n^2 + 3n - 1}{5} = S_4
 \end{align*}
+
 \small{
   \[b\sum_{k=0}^{n-1}(a + kd)r^k = \frac{ab - (a + nd)br^n}{1-r} + \frac{dbr(1-r^n)}{(1-r)^2}\]\\}
 To compute $1^k + ... + n^k$ in $\mathcal{O}(k\lg k + k \lg MOD)$ compute first $t = k + 2$ sums $y_1, ... , y_t$, then interpolate. Let $P = \prod_{i=1}^{t}(n - i)$. Then answer for $n$ is
@@ -104,104 +66,43 @@ To compute $1^k + ... + n^k$ in $\mathcal{O}(k\lg k + k \lg MOD)$ compute first 
 Also $S_k = \frac{1}{k+1}\sum_{j = 0}^{k}(-1)^j\binom{k+1}{j}B_j n^{k + 1 - j}$\\
 where $B_i$ are Bernoulli numbers.
 
-%\vspace{-5mm}
-\section{Series}
-{\small
-$$e^x = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots,\,(-\infty<x<\infty)$$
-$$\ln(1+x) = x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\dots,\,(-1<x\leq1)$$
-$$\sqrt{1+x} = 1+\frac{x}{2}-\frac{x^2}{8}+\frac{2x^3}{32}-\frac{5x^4}{128}+\dots,\,(-1\leq x\leq1)$$
-$$\sin x = x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\dots,\,(-\infty<x<\infty)$$
-$$\cos x = 1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\dots,\,(-\infty<x<\infty)$$
-$$(1-x)^{-r} = \sum_{i = 0}^{\infty} \binom{r + i - 1}{i}x^i, (r \in \mathbb{R})$$
-}
 
 \section{Bitwise Formulas}
-{\small \begin{align*}
-  a | b = a \oplus b + a \& b \\
-  a \oplus(a \& b) = (a | b) \oplus b &&& a \oplus b = (a \& b) \oplus (a | b) \\
-  a + b = a | b + a \& b &&& a + b = a \oplus b + 2(a \& b)
+
+{\small
+\subsection*{Some properties of bitwise operations:}
+\begin{align*}
+  a | b &= a \oplus b + a \& b \\
+  a \oplus (a \& b) &= (a | b) \oplus b \\
+  b \oplus (a \& b) &= (a | b) \oplus a \\
+  (a \& b) \oplus (a | b) &= a \oplus b
 \end{align*}
 
-  $a - b = (a \oplus (a \& b)) - ((a | b) \oplus a) = ((a | b) \oplus b) - ((a | b) \oplus a) = (a \oplus (a \& b)) - (b \oplus (a \& b)) = ((a | b) \oplus b) - (b \oplus (a \& b)) $\\
+\subsection*{Addition:}
+\begin{align*}
+  a + b &= a | b + a \& b \\
+  a + b &= a \oplus b + 2(a \& b)
+\end{align*}
 
+\subsection*{Subtraction:}
+\begin{align*}
+  a - b &= ((a \& b) \oplus ((a | b) \oplus a)) \\[2mm]
+  a - b &= ((a | b) \oplus b) - ((a | b) \oplus a) \\[2mm]
+  a - b &= (a \oplus (a \& b)) - ((a | b) \oplus a) \\[2mm]
+  a - b &= (a \oplus (a \& b)) - (b \oplus (a \& b)) \\[2mm]
+  a - b &= ((a | b) \oplus b) - (b \oplus (a \& b))
+\end{align*}
+
+\subsection*{Working rules for logarithms:}
+\begin{align*}
+  1.\;& \log_b (mn) = \log_b m + \log_b n \\
+  2.\;& \log_b \!\left(\frac{m}{n}\right) = \log_b m - \log_b n \\
+  3.\;& \log_b (m^r) = r \log_b m \\
+  4.\;& \log_b 1 = 0 \\
+  5.\;& \log_b b = 1 \\
+  6.\;& \log_b m = \frac{\log_a m}{\log_a b}
+\end{align*}
 }
-
-\section{Probability theory}
-Let $X$ be a discrete random variable with probability $p_X(x)$ of assuming the value $x$. It will then have an expected value (mean) $\mu=\mathbb{E}(X)=\sum_xxp_X(x)$ and variance $\sigma^2=V(X)=\mathbb{E}(X^2)-(\mathbb{E}(X))^2=\sum_x(x-\mathbb{E}(X))^2p_X(x)$ where $\sigma$ is the standard deviation. If $X$ is instead continuous it will have a probability density function $f_X(x)$ and the sums above will instead be integrals with $p_X(x)$ replaced by $f_X(x)$.
-
-Expectation is linear:
-\[\mathbb{E}(aX+bY) = a\mathbb{E}(X)+b\mathbb{E}(Y)\]
-For independent $X$ and $Y$, \[V(aX+bY) = a^2V(X)+b^2V(Y).\]
-
-\subsection{Discrete distributions}
-
-\subsubsection{Binomial distribution}
-The number of successes in $n$ independent yes/no experiments, each which yields success with probability $p$ is $\textrm{Bin}(n,p),\,n=1,2,\dots,\, 0\leq p\leq1$.
-\[p(k)=\binom{n}{k}p^k(1-p)^{n-k}\]
-\[\mu = np,\,\sigma^2=np(1-p)\]
-$\textrm{Bin}(n,p)$ is approximately $\textrm{Po}(np)$ for small $p$.
-
-\subsubsection{First success distribution}
-The number of trials needed to get the first success in independent yes/no experiments, each which yields success with probability $p$ is $\textrm{Fs}(p),\,0\leq p\leq1$.
-\[p(k)=p(1-p)^{k-1},\,k=1,2,\dots\]
-\[\mu = \frac1p,\,\sigma^2=\frac{1-p}{p^2}\]
-
-\subsubsection{Poisson distribution}
-The number of events occurring in a fixed period of time $t$ if these events occur with a known average rate $\kappa$ and independently of the time since the last event is $\textrm{Po}(\lambda),\,\lambda=t\kappa$.
-\[p(k)=e^{-\lambda}\frac{\lambda^k}{k!}, k=0,1,2,\dots\]
-\[\mu=\lambda,\,\sigma^2=\lambda\]
-
-\subsection{Continuous distributions}
-
-\subsubsection{Uniform distribution}
-If the probability density function is constant between $a$ and $b$ and 0 elsewhere it is $\textrm{U}(a,b),\,a<b$.
-\[f(x) = \left\{
-\begin{array}{cl}
-\frac{1}{b-a} & a<x<b\\
-0 & \textrm{otherwise}
-\end{array}\right.\]
-\[\mu=\frac{a+b}{2},\,\sigma^2=\frac{(b-a)^2}{12}\]
-
-\subsubsection{Exponential distribution}
-The time between events in a Poisson process is $\textrm{Exp}(\lambda),\,\lambda>0$.
-\[f(x) = \left\{
-\begin{array}{cl}
-\lambda e^{-\lambda x} & x\geq0\\
-0 & x<0
-\end{array}\right.\]
-\[\mu=\frac{1}{\lambda},\,\sigma^2=\frac{1}{\lambda^2}\]
-
-\subsubsection{Normal distribution}
-Most real random values with mean $\mu$ and variance $\sigma^2$ are well described by $\mathcal{N}(\mu,\sigma^2),\,\sigma>0$.
-\[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}} \]
-If $X_1 \sim \mathcal{N}(\mu_1,\sigma_1^2)$ and $X_2 \sim \mathcal{N}(\mu_2,\sigma_2^2)$ then
-\[ aX_1 + bX_2 + c \sim \mathcal{N}(\mu_1+\mu_2+c,a^2\sigma_1^2+b^2\sigma_2^2) \]
-
-\section{Markov chains}
-A \emph{Markov chain} is a discrete random process with the property that the next state depends only on the current state.
-Let $X_1,X_2,\ldots$ be a sequence of random variables generated by the Markov process.
-Then there is a transition matrix $\mathbf{P} = (p_{ij})$, with $p_{ij} = \Pr(X_n = i | X_{n-1} = j)$,
-and $\mathbf{p}^{(n)} = \mathbf P^n \mathbf p^{(0)}$ is the probability distribution for $X_n$ (i.e., $p^{(n)}_i = \Pr(X_n = i)$),
-where $\mathbf{p}^{(0)}$ is the initial distribution.
-
-% \subsubsection{Stationary distribution}
-$\mathbf{\pi}$ is a stationary distribution if $\mathbf{\pi} = \mathbf{\pi P}$.
-If the Markov chain is \emph{irreducible} (it is possible to get to any state from any state),
-then $\pi_i = \frac{1}{\mathbb{E}(T_i)}$ where $\mathbb{E}(T_i)$  is the expected time between two visits in state $i$.
-$\pi_j/\pi_i$ is the expected number of visits in state $j$ between two visits in state $i$.
-
-For a connected, undirected and non-bipartite graph, where the transition probability is uniform among all neighbors, $\pi_i$ is proportional to node $i$'s degree.
-
-% \subsubsection{Ergodicity}
-A Markov chain is \emph{ergodic} if the asymptotic distribution is independent of the initial distribution.
-A finite Markov chain is ergodic iff it is irreducible and \emph{aperiodic} (i.e., the gcd of cycle lengths is 1).
-$\lim_{k\rightarrow\infty}\mathbf{P}^k = \mathbf{1}\pi$.
-
-% \subsubsection{Absorption}
-A Markov chain is an A-chain if the states can be partitioned into two sets $\mathbf{A}$ and $\mathbf{G}$, such that all states in $\mathbf{A}$ are absorbing ($p_{ii}=1$), and all states in $\mathbf{G}$ leads to an absorbing state in $\mathbf{A}$.
-The probability for absorption in state $i\in\mathbf{A}$, when the initial state is $j$, is $a_{ij} = p_{ij}+\sum_{k\in\mathbf{G}} a_{ik}p_{kj}$.
-The expected time until absorption, when the initial state is $i$, is $t_i = 1+\sum_{k\in\mathbf{G}}p_{ki}t_k$.
-
 \section{Trivia}
 \textbf{Pythagorean triples}: The Pythagorean triples are uniquely generated by $a=k\cdot (m^{2}-n^{2})$, $b=k\cdot (2mn)$, $c=k\cdot (m^{2}+n^{2})$ with $m > n > 0$, $k > 0$, $\gcd(m,n) = 1$, both $m, n$ not odd.\\
 \textbf{Primes}: $p=962592769$ is such that $2^{21} \mid p-1$, which may be useful. For hashing use 970592641 (31-bit number), 31443539979727 (45-bit), 3006703054056749 (52-bit). There are 78498 primes less than 1\,000\,000.\\
@@ -213,3 +114,4 @@ The expected time until absorption, when the initial state is $i$, is $t_i = 1+\
 \textbf{max Unique Prime Factors}: 6 upto 5e5. 7 upto 9e6. 8 upto 2e8. 9 upto 6e9. 11 upto 7e12. 15 upto 3e19.\\
 \textbf{Quadratic Residue}: $(\frac{a}{p})$ is 0 if $p | a$, 1 if $a$ is a quadratic residue, -1 otherwise. Euler: $(\frac{a}{p}) = a^{(p - 1) / 2} (\mod p)$ (prime). Jacobi: if $n = p_1^{e_1}\cdots p_k^{e_k}$ then $(\frac{a}{n}) = \prod (\frac{a}{p_i})^{e_i}$.\\
 \textbf{Chicken McNugget.} If $a, b$ coprime, there are $\frac{1}{2}(a - 1)(b - 1)$ numbers not of form $ax + by$ $(x, y \geq 0)$, the largest being $ab - a - b$.
+
