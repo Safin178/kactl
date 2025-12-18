@@ -4,18 +4,7 @@
  * License: CC0
  * Source: Basic comparator utilities
  * Description:
- *  Two comparison helpers.
- *   Pair comparator: sorts by first element ascending; if equal, sorts by
- *    second element descending. Formally:
- *      $(A < B)$ iff  
- *      $(A.first < B.first)$ or  
- *      $(A.first = B.first \,\wedge\, A.second > B.second)$.
- *   Double comparator: compares two floating-point numbers with epsilon.
- *    Returns $0$ if $|a-b| \le \varepsilon$, otherwise $-1$ if $a<b$,
- *    and $1$ if $a>b$.
  * Usage:
- *  sort(v.begin(), v.end(), cmp);
- *  if (double comp(x, y) == 0) {  equal  }
  * Time: $O(1)$
  * Status: Tested
  */

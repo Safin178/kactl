@@ -41,4 +41,3 @@ struct Double_Dynamic {
   } pll eval(int l, int r) 
     { return {h1.eval(l,r), h2.eval(l,r)}; }
 };
-

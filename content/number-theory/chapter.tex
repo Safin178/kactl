@@ -1,47 +1,104 @@
 \chapter{Number Theory}
 
-%====================== Sieve and Prime Related ======================
-\section{Sieve and Prime Utilities}
-\kactlimport{ETFsieve.cpp}        % new added, last month
-\kactlimport{ETFsqrt.cpp}         % new added, last month
-\kactlimport{FactoriseSieve.cpp}  % new added, last month
-\kactlimport{FactoriseSqrt.cpp}   % added mod, last week
-\kactlimport{NODandSODsieve.cpp}  % added math pdf from kactl, last week
-\kactlimport{NodSqrt.cpp}         % new added, last month
-\kactlimport{PrimeSieve.cpp}      % new added, last month
-% \kactlimport{PrimeSqrt.cpp}       % new added, last month
-\kactlimport{SPFandHPF.cpp}       % spf add korlam, last week
-\kactlimport{SegmentedSieve.cpp}  % new added, last month
-\kactlimport{SodSqrt.cpp}         % new added, last month
-\kactlimport{bitsetSieve.cpp}     % memory efficient Sieve, last week
-\kactlimport{progkriyaSieve.cpp}  % eta boi er sieve ta, last week
-\kactlimport{sieve upto 1e9.cpp}  % source added, last week
+\subsection{Modular Integer (Mint)}
+\kactlimport{mint.h}
 
-%====================== Modular Arithmetic ===========================
-\section{Modular Arithmetic}
-\kactlimport{mod bin exp.cpp} 
-\kactlimport{modLog.cpp}
-\kactlimport{Mint.cpp}
+\subsection{nCr}
+\kactlimport{nCr.h}
 
-%====================== Combinatorics ================================
-\section{Combinatorics}
-\kactlimport{nCr nPr.cpp}
+\subsection{Euclid}
+\kactlimport{euclid.h}
+
+\subsection{Sieve of Eratosthenes}
+\kactlimport{Eratosthenes.h}
+
+\subsection{some functions}
+Let $n = p_1^{a_1} p_2^{a_2} \cdots p_k^{a_k}$.
+
+\[
+\begin{aligned}
+\text{NOD: } \tau(n) &= \prod_{i=1}^k (a_i + 1) \\
+\text{SOD: } \sigma(n) &= \prod_{i=1}^k \frac{p_i^{a_i+1} - 1}{p_i - 1} \\
+\text{Euler: } \phi(n) &= n \prod_{i=1}^k \left(1 - \frac{1}{p_i}\right)
+\end{aligned}
+\]
 
 
-%====================== Big Integer Utilities ========================
+\subsection{Euler Phi Function}
+\kactlimport{phi.h}
+
+\subsection{Sieve Factorization}
+\kactlimport{Sievefactor.h}
+
+\subsection{Linear Diophantine Equations}
+\kactlimport{Lde.h}
+
+\subsection{Chinese Remainder Theorem}
+\kactlimport{crt.h}
+
+\subsection{Mobius Function}
+\kactlimport{mobius.h}
+
+\subsection{Fast Factorization}
+\kactlimport{fastfactor.h}
+
 \section{Big Integer Utilities}
+
+\subsection{String Addition}
 \kactlimport{stringAdd.cpp}
+
+\subsection{String Divisible Check}
 \kactlimport{stringDivisible.cpp}
+
+\subsection{String Multiplication}
 \kactlimport{stringMul.cpp}
 
-%====================== Others ====================================
-\section{Others}
-\kactlimport{CRT.cpp}
-\kactlimport{fibonacci number faster.cpp}
-\kactlimport{EGCD.cpp}
-\kactlimport{EGCD LDE.cpp}
-	% \subsection{Bézout's identity}
-	% For $a \neq $, $b \neq 0$, then $d=gcd(a,b)$ is the smallest positive integer for which there are integer solutions to $ax+by=d$. If $(x,y)$ is one solution, then all solutions are given by $\left(x+kb/d, y-ka/d\right)$, $k\in\mathbb{Z}$. Find one solution using egcd.
+\subsection{safin's NT temp}
+
+
+% %====================== Sieve and Prime Related ======================
+% \section{Sieve and Prime Utilities}
+% \kactlimport{ETFsieve.cpp}        % new added, last month
+% \kactlimport{ETFsqrt.cpp}         % new added, last month
+ \kactlimport{FactoriseSieve.cpp}  % new added, last month
+% \kactlimport{FactoriseSqrt.cpp}   % added mod, last week
+ \kactlimport{NODandSODsieve.cpp}  % added math pdf from kactl, last week
+% \kactlimport{NodSqrt.cpp}         % new added, last month
+% \kactlimport{PrimeSieve.cpp}      % new added, last month
+% % \kactlimport{PrimeSqrt.cpp}       % new added, last month
+ \kactlimport{SPFandHPF.cpp}       % spf add korlam, last week
+ \kactlimport{SegmentedSieve.cpp}  % new added, last month
+% \kactlimport{SodSqrt.cpp}         % new added, last month
+ \kactlimport{bitsetSieve.cpp}     % memory efficient Sieve, last week
+% \kactlimport{progkriyaSieve.cpp}  % eta boi er sieve ta, last week
+ \kactlimport{sieve upto 1e9.cpp}  % source added, last week
+
+% %====================== Modular Arithmetic ===========================
+% \section{Modular Arithmetic}
+\kactlimport{mod bin exp.cpp} 
+% \kactlimport{modLog.cpp}
+% \kactlimport{Mint.cpp}
+
+% %====================== Combinatorics ================================
+% \section{Combinatorics}
+% \kactlimport{nCr nPr.cpp}
+
+
+% %====================== Big Integer Utilities ========================
+% \section{Big Integer Utilities}
+% \kactlimport{stringAdd.cpp}
+% \kactlimport{stringDivisible.cpp}
+% \kactlimport{stringMul.cpp}
+
+% %====================== Others ====================================
+% \section{Others}
+% \kactlimport{CRT.cpp}
+% \kactlimport{fibonacci number faster.cpp}
+% \kactlimport{EGCD.cpp}
+% \kactlimport{EGCD LDE.cpp}
+% 	% \subsection{Bézout's identity}
+% 	% For $a \neq $, $b \neq 0$, then $d=gcd(a,b)$ is the smallest positive integer for which there are integer solutions to $ax+by=d$. If $(x,y)$ is one solution, then all solutions are given by $\left(x+kb/d, y-ka/d\right)$, $k\in\mathbb{Z}$. Find one solution using egcd.
+
 
 \section{More Number Theory}
 
@@ -121,25 +178,25 @@ $n!$ & 8.7e10 & 1.3e12 & 2.1e13 & 3.6e14 & 2e18 &2e25\\
 % 	%\kactlimport{ContinuedFractions.h}
 % 	\kactlimport{FracBinarySearch.h}
 
-% \section{Mobius Function}
-% \[
-% 	\mu(n) = \begin{cases} 0 & n \textrm{ is not square free}\\ 1 & n \textrm{ has even number of prime factors}\\ -1 & n \textrm{ has odd number of prime factors}\\\end{cases}
-% \]
-%   Mobius Inversion:
-%   \[ g(n) = \sum_{d|n} f(d) \Leftrightarrow f(n) = \sum_{d|n} \mu(d)g(n/d) \]
-%   Other useful formulas/forms:
+\section{Mobius Function}
+\[
+	\mu(n) = \begin{cases} 0 & n \textrm{ is not square free}\\ 1 & n \textrm{ has even number of prime factors}\\ -1 & n \textrm{ has odd number of prime factors}\\\end{cases}
+\]
+  Mobius Inversion:
+  \[ g(n) = \sum_{d|n} f(d) \Leftrightarrow f(n) = \sum_{d|n} \mu(d)g(n/d) \]
+  Other useful formulas/forms:
 
-%   $ \sum_{d | n} \mu(d) = [ n = 1] $,
-%   $ \phi(n) = \sum_{d | n} \mu(d)\frac{n}{d}$
+  $ \sum_{d | n} \mu(d) = [ n = 1] $,
+  $ \phi(n) = \sum_{d | n} \mu(d)\frac{n}{d}$
 
-%   $ g(n) = \sum_{n|d} f(d) \Leftrightarrow f(n) = \sum_{n|d} \mu(\frac{d}{n})g(d)$
+  $ g(n) = \sum_{n|d} f(d) \Leftrightarrow f(n) = \sum_{n|d} \mu(\frac{d}{n})g(d)$
 
-%   $ g(n) = \sum_{1 \leq m \leq n} f(\left\lfloor\frac{n}{m}\right \rfloor ) \Leftrightarrow f(n) = \sum_{1\leq m\leq n} \mu(m)g(\left\lfloor\frac{n}{m}\right\rfloor)$
+  $ g(n) = \sum_{1 \leq m \leq n} f(\left\lfloor\frac{n}{m}\right \rfloor ) \Leftrightarrow f(n) = \sum_{1\leq m\leq n} \mu(m)g(\left\lfloor\frac{n}{m}\right\rfloor)$
 
-%   If $f$ multiplicative, $\sum_{d | n} \mu(d)f(d) = \prod_{\textnormal{prime } p | n}(1 - f(p))$ and $\sum_{d | n}\mu^2(d)f(d) = \prod_{\textnormal{prime } p | n} (1 + f(p))$. 
+  If $f$ multiplicative, $\sum_{d | n} \mu(d)f(d) = \prod_{\textnormal{prime } p | n}(1 - f(p))$ and $\sum_{d | n}\mu^2(d)f(d) = \prod_{\textnormal{prime } p | n} (1 + f(p))$. 
 
-%   If $s_f(n) = \sum_{i = 1}^{n} f(i)$ is a prefix sum of mulitplicative $f$ then $s_{f * g}(n) = \sum_{1 \leq xy \leq n}f(x)g(y)$. Then $s_f(n) = \{s_{f * g}(n) - \sum_{d = 2}^{n} s_f(\lfloor n / d \rfloor) g(d)\} / g(1)$ where $f * g(n) = \sum_{d | n} f(d)g(n / d)$ (Dirichlet). Precompute (linear sieve) $O(n^{2/3})$ first values of $s_f$ for complexity $O(n^{2/3})$.
+  If $s_f(n) = \sum_{i = 1}^{n} f(i)$ is a prefix sum of mulitplicative $f$ then $s_{f * g}(n) = \sum_{1 \leq xy \leq n}f(x)g(y)$. Then $s_f(n) = \{s_{f * g}(n) - \sum_{d = 2}^{n} s_f(\lfloor n / d \rfloor) g(d)\} / g(1)$ where $f * g(n) = \sum_{d | n} f(d)g(n / d)$ (Dirichlet). Precompute (linear sieve) $O(n^{2/3})$ first values of $s_f$ for complexity $O(n^{2/3})$.
 
-%   Useful sums and convolutions: $\epsilon = \mu * \textnormal{\textbf{1}}$, id = $\phi * \textnormal{\textbf{1}}$, id = $g * \textnormal{id}_2$, where $\epsilon(n) = [n = 1]$, $\textnormal{\textbf{1}}(n) = 1$, id$(n) = n$, id$_k(n) = n^k$, $g(n) = \sum_{d | n}\mu(d)nd$.\\
-%   coprime pairs in $[1,n]$ is $\sum_{d = 1}^{n}\mu(d)\lfloor n / d \rfloor ^2$. Sum of GCD pairs in $[1, n]$ is $\sum_{d = 1}^{n}\phi(d)\lfloor n / d \rfloor ^2$. Sum of LCM pairs in $[1, n]$ is $\sum_{d = 1}^{n}(\frac{\lfloor n / d \rfloor (1 + \lfloor n / d \rfloor)}{2})^2 g(d)$, where $g$ is defined above with $g(p^k) = p^k - p^{k+1}$.
+  Useful sums and convolutions: $\epsilon = \mu * \textnormal{\textbf{1}}$, id = $\phi * \textnormal{\textbf{1}}$, id = $g * \textnormal{id}_2$, where $\epsilon(n) = [n = 1]$, $\textnormal{\textbf{1}}(n) = 1$, id$(n) = n$, id$_k(n) = n^k$, $g(n) = \sum_{d | n}\mu(d)nd$.\\
+  coprime pairs in $[1,n]$ is $\sum_{d = 1}^{n}\mu(d)\lfloor n / d \rfloor ^2$. Sum of GCD pairs in $[1, n]$ is $\sum_{d = 1}^{n}\phi(d)\lfloor n / d \rfloor ^2$. Sum of LCM pairs in $[1, n]$ is $\sum_{d = 1}^{n}(\frac{\lfloor n / d \rfloor (1 + \lfloor n / d \rfloor)}{2})^2 g(d)$, where $g$ is defined above with $g(p^k) = p^k - p^{k+1}$.
 
